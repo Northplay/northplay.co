@@ -1,6 +1,6 @@
 FROM ubuntu:15.04
 
-RUN apt-get upgade && apt-get install -y curl software-properties-common git make graphicsmagick g++
+RUN apt-get update && apt-get install -y curl software-properties-common git make graphicsmagick g++
 RUN curl https://deb.nodesource.com/setup_4.x | bash -
 RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update && \
