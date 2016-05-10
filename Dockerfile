@@ -6,6 +6,7 @@ RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update && \
   apt-get -y install nodejs
 
+RUN npm install -g bower gulp
 RUN printf '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc
 
 COPY .babelrc /app/
