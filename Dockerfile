@@ -23,3 +23,5 @@ COPY app.js /app/
 
 RUN gulp production
 CMD PORT=5000 node app.js
+
+EXPOSE 5000
