@@ -12,6 +12,7 @@ RUN printf '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc
 COPY .babelrc /app/
 COPY gulpfile.babel.js /app/
 COPY package.json /app/
+COPY nginx.conf.sigil /app/
 
 WORKDIR /app
 
