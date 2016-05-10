@@ -22,6 +22,4 @@ COPY index.handlebars /app/
 COPY app.js /app/
 
 RUN gulp production
-CMD PORT=80 node app.js
-
-EXPOSE 80
+CMD PORT=5000 node app.js
