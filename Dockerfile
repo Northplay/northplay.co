@@ -1,0 +1,26 @@
+FROM ubuntu:15.04
+
+RUN apt-get upgade && apt-get install -y curl software-properties-common git make graphicsmagick g++
+RUN curl https://deb.nodesource.com/setup_4.x | bash -
+RUN add-apt-repository -y ppa:nginx/stable
+RUN apt-get update && \
+  apt-get -y install nodejs
+
+RUN printf '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc
+
+COPY .babelrc /app/
+COPY gulpfile.babel.js /app/
+COPY package.json /app/
+
+WORKDIR /app
+
+RUN npm install
+
+COPY assets /app/assets/
+COPY index.handlebars /app/
+COPY app.js /app/
+
+RUN gulp production
+CMD node app.js
+
+EXPOSE 3000
