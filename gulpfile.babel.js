@@ -11,12 +11,13 @@ import newer from 'gulp-newer';
 import sass from 'gulp-sass';
 import imagemin from 'gulp-imagemin';
 import htmlmin from 'gulp-htmlmin';
+import uglify from 'gulp-uglify';
 
 import babelify from 'babelify';
 import watchify from 'watchify';
 import browserify from 'browserify';
-import exorcist from 'exorcist';
 import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 import gutil from 'gulp-util';
 
 import handlebars from 'gulp-compile-handlebars';
@@ -55,7 +56,7 @@ function configure_bundler() {
 
   const browserify_opts = {
     entries: ['./assets/js/main.js'],
-    debug: !config.production
+    debug: true
   };
 
   if (config.watching) {
@@ -86,9 +87,12 @@ function bundle(bundler) {
       browserSync.notify('Bundle error!');
       this.emit('end');
     })
-    // .pipe(exorcist(`${config.build}/js/bundle.js.map`))
     .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(gif(config.production, uglify()))
     .pipe(rename('bundle.js'))
+    .pipe(sourcemaps.write('./maps', {includeContent: true, sourceRoot: './assets/js'}))
     .pipe(gulp.dest(`${config.build}/js/`))
     .pipe(gif(config.watching, browserSync.stream({once: true})));
 }
@@ -151,9 +155,9 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(sass(options))
     .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
-    .pipe(sourcemaps.write('./maps', {includeContent: false, sourceRoot: './assets/sass'}))
+    .pipe(sourcemaps.write('./maps', {includeContent: true, sourceRoot: './assets/sass'}))
     .pipe(gulp.dest(`${config.build}/css`))
-    .pipe(gif(!config.production, browserSync.stream({match: '**/*.css'})));
+    .pipe(gif(config.watching, browserSync.stream({match: '**/*.css'})));
 });
 
 gulp.task('imagecopy', () => {
@@ -194,12 +198,22 @@ gulp.task('html', () => {
     }
   };
 
+  let minOptions = {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    minifyURLs: true,
+    minifyJS: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeRedundantAttributes: true
+  };
+
   return gulp.src(config.paths.html)
     .pipe(handlebars(data, options))
     .pipe(rename({extname: '.html'}))
-    .pipe(gif(config.production, htmlmin()))
+    .pipe(gif(config.production, htmlmin(minOptions)))
     .pipe(gulp.dest(config.build))
-    .pipe(browserSync.stream());
+    .pipe(gif(config.watching, browserSync.stream()));
 });
 
 gulp.task('sync', () => {
