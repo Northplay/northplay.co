@@ -28,7 +28,7 @@ import bs from 'browser-sync';
 
 const site = {
   title: 'Northplay',
-  description: '❄️',
+  description: 'Makers from Copenhagen',
   keywords: 'north,play,games,ios,tvos,apple,tv,development,copenhagen,denmark',
   url: 'http://northplay.co',
   fb: {
