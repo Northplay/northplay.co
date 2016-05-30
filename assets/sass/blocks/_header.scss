@@ -1,6 +1,6 @@
 @include b(header) {
   @include flex_container;
-  padding: 100px 10px;
+  padding: 300px 10px;
   text-align: center;
 
   @include e(logo) {
@@ -10,9 +10,23 @@
     height: auto;
   }
 
-  @include e(name) {
-    @include rem(font-size, 4rem);
-    font-weight: bold;
-    color: #212121;
+  @include e(makers) {
+    @include rem(font-size, 5rem);
+    color: #60fde1;
+    font-weight: 200;
+  }
+
+  @include e(email) {
+    @include rem(font-size, 1.8rem);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+
+    display: block;
+    margin-top: 50px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
