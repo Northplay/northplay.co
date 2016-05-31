@@ -10,16 +10,19 @@ html {
   font-family: $font_family_primary;
 }
 
+html {
+  background: url('/images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 body, p, a, span, li, h1, h2, h3, h4 {
   -webkit-font-smoothing: antialiased;
 }
 
 @include b(container) {
-  background-image: url('/images/bg.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
   width: 100%;
 }
 
