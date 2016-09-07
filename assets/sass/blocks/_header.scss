@@ -1,10 +1,35 @@
 @include b(header-section) {
   background-color: rgb(41, 65, 159);
+  position: relative;
+  z-index: -101;
+  overflow: hidden;
+
+  @include e(big-video) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: auto;
+    min-height: 100%;
+    width: auto;
+    min-width: 100%;
+
+    z-index: -100;
+
+    background-color: transparent;
+    background-image: url('/images/header-background.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+  }
 }
 
 @include b(header) {
   @include flex_container;
-  padding: 300px 10px;
+  padding: 200px 10px;
   text-align: center;
 
   @include e(logo) {
@@ -25,7 +50,7 @@
   @include e(team) {
     @include rem(font-size, 1.4rem);
     @include rem(line-height, 2.0rem);
-    color: #ccc;
+    color: #fff;
 
     margin-top: 20px;
   }

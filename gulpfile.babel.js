@@ -44,7 +44,8 @@ const config = {
     partials: './assets/templates/**/*.handlebars',
     images: './assets/images/**/*.{png,jpg,gif,svg}',
     sass: './assets/sass/**/*.{scss,sass}',
-    js: './assets/js/main.js'
+    js: './assets/js/main.js',
+    videos: './assets/videos/*.{webm,mp4}'
   },
   production: false,
   watching: false,
@@ -166,6 +167,11 @@ gulp.task('imagecopy', () => {
     .pipe(gulp.dest(`${config.build}/images`));
 });
 
+gulp.task('videos', () => {
+  return gulp.src(config.paths.videos)
+    .pipe(gulp.dest(`${config.build}/videos`));
+});
+
 gulp.task('unretina', () => {
   const dest = `${config.build}/images`;
 
@@ -233,10 +239,10 @@ gulp.task('bundle', () => {
   return configure_bundler();
 });
 
-gulp.task('build', ['html', 'images', 'sass', 'bundle']);
+gulp.task('build', ['html', 'images', 'videos', 'sass', 'bundle']);
 gulp.task('production', ['set-production', 'build'])
 
-gulp.task('watch', ['sync'], () => {
+gulp.task('watch', ['build', 'sync'], () => {
   config.watching = true;
   configure_bundler();
 
@@ -244,6 +250,7 @@ gulp.task('watch', ['sync'], () => {
   gulp.watch(config.paths.partials, ['html']);
   gulp.watch(config.paths.images, ['images']);
   gulp.watch(config.paths.sass, ['sass']);
+  gulp.watch(config.paths.videos, ['videos']);
 });
 
 gulp.task('default', ['build', 'watch']);
