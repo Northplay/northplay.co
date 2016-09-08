@@ -1,7 +1,7 @@
 @include b(header-section) {
   background-color: rgb(41, 65, 159);
   position: relative;
-  z-index: -101;
+  z-index: 10;
   overflow: hidden;
 
   @include e(big-video) {
@@ -31,6 +31,7 @@
   @include flex_container;
   padding: 200px 10px;
   text-align: center;
+  z-index: 20;
 
   @include e(logo) {
     flex: 1 1 auto;
@@ -41,29 +42,33 @@
 
   @include e(weare) {
     @include rem(font-size, 3.5rem);
+    @include rem(line-height, 3.5rem);
     color: #fff;
-    font-weight: bold;
+    font-weight: $font_weight_heavy;
     text-transform: uppercase;
-
   }
 
   @include e(team) {
-    @include rem(font-size, 1.4rem);
-    @include rem(line-height, 2.0rem);
+    @include rem(font-size, 1.9rem);
+    @include rem(line-height, 2.2rem);
     color: #fff;
 
     margin-top: 20px;
   }
 
   @include e(talk) {
-    @include rem(font-size, 1.2rem);
-    background-color: rgb(254, 237, 81);
-    border-radius: 22px;
+    @include rem(font-size, 2rem);
+    @include rem(line-height, 2rem);
+    font-weight: $font_weight_book;
+    background-color: rgba(255, 239, 63, 0.9);
+    color: rgb(39, 62, 162);
+    cursor: pointer;
+    border-radius: 25px;
     font-weight: 200;
     text-decoration: none;
 
     display: inline-block;
-    padding: 20px 30px;
+    padding: 20px 45px;
     margin-top: 50px;
 
     &:hover {
@@ -72,22 +77,90 @@
   }
 }
 
-@include breakpoint(420px) {
-  @include b(header) {
-    padding: 200px 20px 0 20px;
+@include breakpoint(768px) {
+  @include b(header-section) {
+    background-image: url(/images/header-background.jpg);
+    background-size: cover;
+    background-position: center center;
 
-    @include e(makers) {
-      @include rem(font-size, 2.9rem);
+    @include e(big-video) {
+      display: none;
+    }
+  }
+
+  @include b(header) {
+    padding: 100px 10px;
+
+    @include e(weare) {
+      @include rem(font-size, 2.8rem);
+      @include rem(line-height, 3rem);
+    }
+
+    @include e(team) {
+      @include rem(font-size, 1.6rem);
+      @include rem(line-height, 2rem);
+
+      br {
+        display: none;
+      }
+    }
+
+    @include e(talk) {
+      @include rem(font-size, 1.6rem);
     }
   }
 }
 
-@include breakpoint(320px) {
+@include breakpoint(475px) {
   @include b(header) {
-    padding: 150px 20px 0 20px;
-
-    @include e(makers) {
-      @include rem(font-size, 2.4rem);
+    @include e(weare) {
+      br {
+        display: none;
+      }
     }
   }
 }
+
+@include breakpoint(400px) {
+  @include b(header) {
+    padding: 60px 10px;
+
+    @include e(logo) {
+      max-width: 50% !important;
+    }
+
+    @include e(weare) {
+      @include rem(font-size, 1.8rem);
+      @include rem(line-height, 2.2rem);
+
+      br {
+        display: block;
+      }
+    }
+
+    @include e(team) {
+      @include rem(font-size, 1.4rem);
+      @include rem(line-height, 1.8rem);
+    }
+  }
+}
+
+// @include breakpoint(420px) {
+//   @include b(header) {
+//     // padding: 200px 20px 0 20px;
+//
+//     @include e(makers) {
+//       @include rem(font-size, 2.9rem);
+//     }
+//   }
+// }
+//
+// @include breakpoint(320px) {
+//   @include b(header) {
+//     padding: 150px 20px 0 20px;
+//
+//     @include e(makers) {
+//       @include rem(font-size, 2.4rem);
+//     }
+//   }
+// }
