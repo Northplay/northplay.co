@@ -38,7 +38,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "gulp production && node app.js",
     "build": "gulp build",
     "build-production": "gulp production",
     "dev": "gulp"
