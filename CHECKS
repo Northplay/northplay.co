@@ -1,6 +1,5 @@
-WAIT=2
+WAIT=10
 TIMEOUT=5
 ATTEMPTS=5
 
-https://northplay.co/       We are Northplay
-https://www.northplay.co/   We are Northplay
+/ We are Northplay
