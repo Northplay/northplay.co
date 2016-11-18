@@ -25,6 +25,10 @@
 @include b(company) {
   display: flex;
 
+  @include e(logo) {
+    user-select: none;
+  }
+
   @include e(details) {
     display: flex;
     flex-flow: column nowrap;
@@ -77,6 +81,7 @@
 
   @include e(icon) {
     margin-right: 18px;
+    user-select: none;
   }
 }
 

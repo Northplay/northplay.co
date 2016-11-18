@@ -11,6 +11,10 @@
 
     flex-flow: column nowrap;
     align-items: center;
+
+    img {
+      user-select: none;
+    }
   }
 
   @include e(title) {

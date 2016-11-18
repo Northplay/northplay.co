@@ -1,7 +1,7 @@
 {{> header}}
 
 <section class="header-section">
-  <video class="header-section__big-video" playsinline autoplay muted loop poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="big_video">
+  <video class="header-section__big-video" playsinline autoplay muted loop poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="big_video" style="visibility:none;" onplay="var s=this;setTimeout(function(){s.style.visibility='visible';},100);">
     <source src="/videos/background-loop.mp4" type="video/mp4">
     <source src="/videos/background-loop.webm" type="video/webm">
   </video>

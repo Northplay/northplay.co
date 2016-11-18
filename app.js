@@ -1,8 +1,18 @@
-var express = require('express');
-var compression = require('compression');
+const express = require('express');
+const compression = require('compression');
 
-var app = express();
+const build = `${__dirname}/build`;
+const port = process.env.PORT ? process.env.PORT : 3000;
+
+const app = express();
+
 app.use(compression());
-app.use(express.static('build'));
+app.use(express.static(build));
 
-app.listen(process.env.PORT || 3000);
+app.listen(port, function (error) {
+  if (error) {
+    console.error(error);
+  }
+
+  console.info('Server is now running. Express is listening on port %s', port);
+});
