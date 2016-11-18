@@ -47,8 +47,6 @@
   @include b(wedo) {
     @include e(thing) {
       flex-basis: 100%;
-
-      padding: 0;
       margin-bottom: 50px;
 
       &:last-child {
@@ -57,7 +55,9 @@
     }
 
     @include e(text) {
+      padding: 0 30px !important;
       max-width: 400px;
+      text-align: center;
     }
   }
 }
