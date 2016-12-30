@@ -1,5 +1,5 @@
 @include b(footer-section) {
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(235, 235, 235);
 }
 
 @include b(footer) {
@@ -46,7 +46,7 @@
   }
 
   @include e(address) {
-    @include rem(font-size, 1rem);
+    @include rem(font-size, 1.1rem);
     @include rem(line-height, 1.4rem);
   }
 }
@@ -63,6 +63,7 @@
   @include e(link) {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 
     @include rem(font-size, 1.8rem);
     font-weight: $font_weight_heavy;
