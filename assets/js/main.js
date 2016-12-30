@@ -14,6 +14,8 @@ const handle_newsletter_submit = function(e) {
   e.preventDefault();
   var $email = $(this).find('input[name=email]');
   var $submit = $(this).find('input[type=submit]');
+  var l = Ladda.create(document.querySelector('.ladda-button'));
+  l.start();
 
   if ($email.val() == '') {
     Ladda.stopAll();
@@ -36,8 +38,8 @@ const handle_newsletter_submit = function(e) {
     contentType: 'application/json',
     data: JSON.stringify(data),
     success: function (data) {
-      $('.newsletter_form').hide();
-      $('.newsletter_thanks').show();
+      $('.newsletter__form').hide();
+      $('.newsletter__thanks').show();
       Ladda.stopAll();
     },
     error: function (xhr, status, error) {
@@ -51,7 +53,6 @@ const handle_newsletter_submit = function(e) {
 $(document).ready(function() {
   videoElement.oncanplay = loadVideo;
   $('#newsletter_form').on('submit', handle_newsletter_submit);
-  Ladda.create(document.querySelector('.ladda-button'));
 
   Retina.init(window);
 });
