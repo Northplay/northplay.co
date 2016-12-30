@@ -202,7 +202,10 @@ gulp.task('images', ['imagecopy', 'unretina']);
 gulp.task('html', () => {
   const data = {
     config: config,
-    site: site
+    site: site,
+    data: {
+      products: require('./assets/data/products.json')
+    }
   };
 
   let options = {

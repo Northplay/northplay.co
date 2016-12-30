@@ -13,6 +13,32 @@
     <a href="mailto:hey@northplay.co" class="header__talk">Let's talk</a>
   </div>
 </section>
+<style>
+{{#each data.products }}
+{{#each style as |rules selector|}}
+  {{selector}} {
+  {{#each rules as |value name|}}
+    {{name}}: {{value}};
+  {{/each}}
+  }
+{{/each}}
+</style>
+<section class="product-section product-section--{{id}}">
+  <div class="product product--{{id}}">
+    <div class="product__info">
+      <a href="/{{id}}" class="product__icon">
+        <img src="/images/product-icon-{{id}}_2x.png" alt="{{name}} App icon">
+      </a>
+      <div class="product__name">{{name}}</div>
+      <div class="product__description">{{description}}</div>
+      <a href="/{{id}}" class="product__learn-more">Learn more</a>
+      <div class="product__publisher">{{publisher}}</div>
+    </div>
+  </div>
+</section>
+{{/each}}
+
+{{!-- === PRODUCT END === Conduct THIS! === --}}
 
 <section class="wedo-section">
   <div class="wedo">

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "conductthis",
+    "name": "Conduct THIS!",
+    "description": "Set in a stunning world, with incredibly simple controls you race against time to bring passengers safely to their destination by commanding trains, switching tracks and avoiding collisions in increasingly challenging action-puzzles.",
+    "publisher": "Self Published",
+    "type": "Game",
+    "platforms": ["ios", "android"],
+    "links": {
+      "website": "https://conductthis.com",
+      "twitter": "conductthis",
+      "facebook": "conductthis",
+      "ios": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
+      "android": "https://play.google.com/store/apps/details?id=co.northplay.ConductTHIS"
+    },
+    "style": {
+      ".product-section--conductthis": {
+        "background-color": "rgb(19, 76, 156)"
+      },
+      ".product--conductthis": {
+        "color": "#fff"
+      },
+      ".product--conductthis .product__learn-more": {
+        "background-color": "rgb(22, 188, 251)",
+        "color": "rgb(9, 17, 53)"
+      },
+      ".product--conductthis .product__learn-more:hover": {
+        "background-color": "rgb(19, 150, 200)"
+      },
+      ".product--conductthis .product__publisher": {
+        "color": "rgb(21, 99, 247)"
+      }
+    }
+  }
+]
