@@ -246,7 +246,18 @@ gulp.task('subpages', () => {
     .pipe(gdata((file) => {
       const id = file.path.replace('.handlebars', '').split('/').pop();
       const product = products.filter((p) => p.id == id).pop();
-      return { data: { product: product } };
+      let data = {
+        site: site,
+        config: config,
+        title: product.name,
+        data: {
+          product: product
+        }
+      };
+
+    data.site.description = product.description;
+
+      return data;
     }))
     .pipe(handlebars({}, options))
     .pipe(rename((path) => {
