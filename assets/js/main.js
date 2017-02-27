@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var Ladda = require('ladda');
 var Retina = require('retina.js').Retina;
-
+var appear = require('jquery.appear');
 var videoElement = document.getElementById('big_video');
 
 var loadVideo = function() {

@@ -13,21 +13,28 @@
     <a href="mailto:hey@northplay.co" class="header__talk">Let's talk</a>
   </div>
 </section>
+
 <style>
 {{#each data.products }}
-{{#each style as |rules selector|}}
-  {{selector}} {
-  {{#each rules as |value name|}}
-    {{name}}: {{value}};
+  {{#each style as |rules selector|}}
+    {{selector}} {
+    {{#each rules as |value name|}}
+      {{name}}: {{value}};
+    {{/each}}
+    }
   {{/each}}
-  }
 {{/each}}
 </style>
-<section class="product-section product-section--{{id}}">
+
+{{#each data.products }}
+<section class="product-section product-section--{{id}}" style="background-color: {{tint}}">
   <div class="product product--{{id}}">
+    <div class="product__preview">
+      <img src="/images/product-preview-{{id}}.png" data-at2x="/images/product-preview-{{id}}_2x.png">
+    </div>
     <div class="product__info">
       <a href="/{{id}}" class="product__icon">
-        <img src="/images/product-icon-{{id}}_2x.png" alt="{{name}} App icon">
+        <img src="/images/product-icon-{{id}}.png" data-at2x="/images/product-icon-{{id}}_2x.png" alt="{{name}} App icon">
       </a>
       <div class="product__name">{{name}}</div>
       <div class="product__description">{{description}}</div>

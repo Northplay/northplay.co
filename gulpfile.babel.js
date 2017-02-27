@@ -47,7 +47,8 @@ const config = {
     js: './assets/js/main.js',
     videos: './assets/videos/*.{webm,mp4}',
     favicon: './assets/favicon/*{.png,jpg,svg}',
-    copyfiles: ['manifest.json','browserconfig.xml','favicon.ico']
+    copyfiles: ['manifest.json','browserconfig.xml','favicon.ico'],
+    data: './assets/data/**/*.json'
   },
   production: false,
   watching: false,
@@ -126,7 +127,18 @@ function load_partial(name) {
   return null;
 }
 
-function image_helper(path, cls = null, has_retina = true) {
+function read_data(name) {
+  const path = `./assets/data/${name}.json`;
+
+  if (file_exists(path)) {
+    const data = fs.readFileSync(path, 'utf8');
+    return JSON.parse(data);
+  }
+
+  return null;
+}
+
+function image_helper(path, cls = null, alt = "", has_retina = true) {
   const retina = retina_path(path);
   var str = `<img src="/images/${path}"`;
   if (retina) {
@@ -134,6 +146,9 @@ function image_helper(path, cls = null, has_retina = true) {
   }
   if (typeof cls === 'string') {
     str += ` class="${cls}"`;
+  }
+  if (typeof alt === 'string' && alt != "") {
+    str += ` alt="${alt}"`;
   }
   str += ">";
 
@@ -199,12 +214,13 @@ gulp.task('unretina', () => {
 
 gulp.task('images', ['imagecopy', 'unretina']);
 
+
 gulp.task('html', () => {
   const data = {
     config: config,
     site: site,
     data: {
-      products: require('./assets/data/products.json')
+      products: read_data('products')
     }
   };
 
@@ -268,6 +284,7 @@ gulp.task('watch', ['build', 'sync'], () => {
   gulp.watch(config.paths.videos, ['videos']);
   gulp.watch(config.paths.favicon, ['favicon']);
   gulp.watch(config.paths.copyfiles, ['copyfiles']);
+  gulp.watch(config.paths.data, ['sass', 'html']);
 });
 
 gulp.task('default', ['build', 'watch']);

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "minbio-ios",
+    "name": "Min Bio til iOS",
+    "description": "Set in a stunning world, with incredibly simple controls you race against time to bring passengers safely to their destination by commanding trains, switching tracks and avoiding collisions in increasingly challenging action-puzzles.",
+    "publisher": "Made for Nordisk Film",
+    "type": "App",
+    "platforms": ["ios"],
+    "links": {
+      "website": "https://www.minbio.dk",
+      "ios": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8"
+    },
+    "tint": "rgb(139, 27, 27)",
+    "style": {
+      ".product--minbio-ios": {
+        "color": "#fff"
+      },
+      ".product--minbio-ios .product__learn-more": {
+        "background-color": "rgb(254, 232, 2)",
+        "color": "rgb(9, 17, 53)"
+      },
+      ".product--minbio-ios .product__learn-more:hover": {
+        "background-color": "rgb(254, 186, 2)"
+      },
+      ".product--minbio-ios .product__publisher": {
+        "color": "rgb(255, 55, 80)"
+      }
+    }
+  }
+]
