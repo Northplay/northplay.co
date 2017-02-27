@@ -51,7 +51,10 @@ const handle_newsletter_submit = function(e) {
 };
 
 $(document).ready(function() {
-  videoElement.oncanplay = loadVideo;
+  if (videoElement != null) {
+    videoElement.oncanplay = loadVideo;
+  }
+  
   $('#newsletter_form').on('submit', handle_newsletter_submit);
 
   Retina.init(window);
