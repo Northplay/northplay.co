@@ -2,18 +2,21 @@
   {
     "id": "conductthis",
     "name": "Conduct THIS!",
+    "tagline": "A game of explosive railway action for iOS & Android",
     "description": "Set in a stunning world, with incredibly simple controls you race against time to bring passengers safely to their destination by commanding trains, switching tracks and avoiding collisions in increasingly challenging action-puzzles.",
     "publisher": "Self Published",
     "type": "Game",
     "platforms": ["ios", "android"],
     "links": {
-      "website": "https://conductthis.com",
-      "twitter": "conductthis",
-      "facebook": "conductthis",
-      "ios": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
-      "android": "https://play.google.com/store/apps/details?id=co.northplay.ConductTHIS"
+      "App Store": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
+      "Google Play": "https://play.google.com/store/apps/details?id=co.northplay.ConductTHIS",
+      "conductthis.com": "https://conductthis.com",
+      "Twitter": "conductthis",
+      "Facebook": "conductthis"
     },
+    "wemade": "Everything",
     "tint": "rgb(19, 76, 156)",
+    "fill": "#698BFA",
     "style": {
       ".product--conductthis": {
         "color": "#fff"
@@ -28,66 +31,24 @@
       ".product--conductthis .product__publisher": {
         "color": "rgb(21, 99, 247)"
       }
-    }
-  },
-  {
-    "id": "drtv",
-    "name": "DR TV for Apple TV",
-    "description": "Set in a stunning world, with incredibly simple controls you race against time to bring passengers safely to their destination by commanding trains, switching tracks and avoiding collisions in increasingly challenging action-puzzles.",
-    "publisher": "Made for Danmarks Radio",
-    "type": "App",
-    "platforms": ["tvos"],
-    "links": {
-      "website": "http://dr.dk/tv",
-      "tvos": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8"
     },
-    "tint": "rgb(221, 221, 221)",
-    "style": {
-      ".product--drtv": {
-        "color": "rgb(44, 44, 43)"
+    "pageStyle": {
+      ".header-section": {
+        "background-color": "rgb(36, 39, 81)"
       },
-      ".product--drtv .product__learn-more": {
-        "background-color": "#fff",
-        "color": "rgb(9, 17, 53)"
+      ".header-section": {
+        "background": "url(/images/product-header-conductthis.jpg) center center",
+        "background-size": "cover",
+        "min-height": "1050px"
       },
-      ".product--drtv .product__learn-more:hover": {
-        "background-color": "rgb(9, 17, 53)",
+      ".product-header__name": {
         "color": "#fff"
       },
-      ".product--drtv .product__publisher": {
-        "color": "rgb(141, 141, 141)"
-      }
-    }
-  },
-  {
-    "id": "numberf",
-    "name": "numberF for Apple TV",
-    "description": "numberF is the revolutionary new way to discover, collect and stream contemporary digital art on any screen, as easily as a movie or a song.",
-    "publisher": "Made for Tweli Inc.",
-    "type": "App",
-    "platforms": ["tvos"],
-    "links": {
-      "website": "http://numberf.com",
-      "tvos": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8"
-    },
-    "tint": "rgb(192, 192, 192)",
-    "style": {
-      ".product--numberf": {
-        "color": "rgb(105, 105, 105)"
+      ".product-header__tagline": {
+        "color": "#79d1ff"
       },
-      ".product--numberf .product__name": {
-        "color": "rgb(26, 26, 28)"
-      },
-      ".product--numberf .product__learn-more": {
-        "background-color": "rgb(26, 26, 26)",
-        "color": "#fff"
-      },
-      ".product--numberf .product__learn-more:hover": {
-        "background-color": "#fff",
-        "color": "rgb(26, 26, 26)"
-      },
-      ".product--numberf .product__publisher": {
-        "color": "rgb(141, 141, 141)"
+      ".product-detail__link": {
+        "color": "#6586f1"
       }
     }
   }

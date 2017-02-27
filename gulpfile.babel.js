@@ -12,6 +12,7 @@ import sass from 'gulp-sass';
 import imagemin from 'gulp-imagemin';
 import htmlmin from 'gulp-htmlmin';
 import uglify from 'gulp-uglify';
+import gdata from 'gulp-data';
 
 import babelify from 'babelify';
 import watchify from 'watchify';
@@ -48,7 +49,8 @@ const config = {
     videos: './assets/videos/*.{webm,mp4}',
     favicon: './assets/favicon/*{.png,jpg,svg}',
     copyfiles: ['manifest.json','browserconfig.xml','favicon.ico'],
-    data: './assets/data/**/*.json'
+    data: './assets/data/**/*.json',
+    pages: './assets/pages/*.handlebars'
   },
   production: false,
   watching: false,
@@ -214,8 +216,50 @@ gulp.task('unretina', () => {
 
 gulp.task('images', ['imagecopy', 'unretina']);
 
+gulp.task('subpages', () => {
+  const products = read_data('products');
 
-gulp.task('html', () => {
+  let options = {
+    ignorePartials: true,
+    partials: {
+      get header() { return load_partial('header') },
+      get footer() { return load_partial('footer') },
+      get newsletter() { return load_partial('newsletter') },
+      get product() { return load_partial('product') }
+    },
+    helpers: {
+      img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)
+    }
+  };
+
+  let minOptions = {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    minifyURLs: true,
+    minifyJS: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeRedundantAttributes: true
+  };
+
+  return gulp.src(config.paths.pages)
+    .pipe(gdata((file) => {
+      const id = file.path.replace('.handlebars', '').split('/').pop();
+      const product = products.filter((p) => p.id == id).pop();
+      return { data: { product: product } };
+    }))
+    .pipe(handlebars({}, options))
+    .pipe(rename((path) => {
+      path.dirname += `/${path.basename}`;
+      path.basename = 'index';
+      path.extname = '.html';
+    }))
+    .pipe(gif(config.production, htmlmin(minOptions)))
+    .pipe(gulp.dest(config.build))
+    .pipe(gif(config.watching, browserSync.stream()));
+});
+
+gulp.task('index', () => {
   const data = {
     config: config,
     site: site,
@@ -228,7 +272,8 @@ gulp.task('html', () => {
     ignorePartials: true,
     partials: {
       get header() { return load_partial('header') },
-      get footer() { return load_partial('footer') }
+      get footer() { return load_partial('footer') },
+      get newsletter() { return load_partial('newsletter') }
     },
     helpers: {
       img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)
@@ -252,6 +297,8 @@ gulp.task('html', () => {
     .pipe(gulp.dest(config.build))
     .pipe(gif(config.watching, browserSync.stream()));
 });
+
+gulp.task('html', ['index', 'subpages']);
 
 gulp.task('sync', () => {
   browserSync.init({
@@ -279,6 +326,7 @@ gulp.task('watch', ['build', 'sync'], () => {
 
   gulp.watch(config.paths.html, ['html']);
   gulp.watch(config.paths.partials, ['html']);
+  gulp.watch(config.paths.pages, ['subpages']);
   gulp.watch(config.paths.images, ['images']);
   gulp.watch(config.paths.sass, ['sass']);
   gulp.watch(config.paths.videos, ['videos']);
