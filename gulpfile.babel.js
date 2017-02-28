@@ -225,7 +225,8 @@ gulp.task('subpages', () => {
       get header() { return load_partial('header') },
       get footer() { return load_partial('footer') },
       get newsletter() { return load_partial('newsletter') },
-      get product() { return load_partial('product') }
+      get product() { return load_partial('product') },
+      get navigation() { return load_partial('navigation') }
     },
     helpers: {
       img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)
@@ -284,7 +285,8 @@ gulp.task('index', () => {
     partials: {
       get header() { return load_partial('header') },
       get footer() { return load_partial('footer') },
-      get newsletter() { return load_partial('newsletter') }
+      get newsletter() { return load_partial('newsletter') },
+      get navigation() { return load_partial('navigation') }
     },
     helpers: {
       img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)

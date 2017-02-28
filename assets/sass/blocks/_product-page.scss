@@ -35,21 +35,6 @@
   }
 }
 
-.navigation {
-  @include flex_container;
-  padding: 40px 10px;
-
-  @include e(logo) {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
-
-    svg + svg {
-      margin-top: -8px;
-    }
-  }
-}
-
 .product-header {
   @include flex_container;
 

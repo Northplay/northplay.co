@@ -1,0 +1,48 @@
+.navigation {
+  @include flex_container;
+  padding: 40px 10px;
+  display: flex;
+
+  @include e(logo) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 78px;
+
+    svg + svg {
+      margin-top: -6px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @include e(left) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @include e(right) {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  @include e(link) {
+    @include rem(font-size, 1.1rem);
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
