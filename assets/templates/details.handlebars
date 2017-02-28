@@ -1,0 +1,16 @@
+<div class="product-start__details product-detail">
+  <div class="product-detail__icon">
+    <img src="/images/product-icon-{{id}}.png" data-at2x="/images/product-icon-{{id}}_2x.png" alt="{{name}} App icon">
+  </div>
+
+  <div class="product-detail__title">Client</div>
+  <div class="product-detail__value">{{publisher}}</div>
+
+  <div class="product-detail__title">What we did</div>
+  <div class="product-detail__value">{{wemade}}</div>
+
+  <div class="product-detail__title">Links</div>
+  {{#each links as |link name|}}
+    <a href="{{link}}" class="product-detail__link" target="_blank">{{name}}</a>
+  {{/each}}
+</div>

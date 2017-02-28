@@ -226,6 +226,7 @@ gulp.task('subpages', () => {
       get footer() { return load_partial('footer') },
       get newsletter() { return load_partial('newsletter') },
       get product() { return load_partial('product') },
+      get details() { return load_partial('details') },
       get navigation() { return load_partial('navigation') }
     },
     helpers: {

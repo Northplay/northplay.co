@@ -17,23 +17,3 @@
     </div>
   </div>
 </section>
-
-<section class="product-page">
-  <div class="product-page__details product-detail">
-    <div class="product-detail__icon">
-      <img src="/images/product-icon-{{data.product.id}}.png" data-at2x="/images/product-icon-{{data.product.id}}_2x.png" alt="{{name}} App icon">
-    </div>
-
-    <div class="product-detail__title">Client</div>
-    <div class="product-detail__value">{{data.product.publisher}}</div>
-
-    <div class="product-detail__title">What we did</div>
-    <div class="product-detail__value">{{data.product.wemade}}</div>
-
-    <div class="product-detail__title">Links</div>
-    {{#each data.product.links as |link name|}}
-      <a href="{{link}}" class="product-detail__link" target="_blank">{{name}}</a>
-    {{/each}}
-  </div>
-
-  <div class="product-page__content">
