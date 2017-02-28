@@ -34,12 +34,11 @@
     },
     "pageStyle": {
       ".header-section": {
-        "background-color": "rgb(36, 39, 81)"
-      },
-      ".header-section": {
-        "background": "url(/images/product-header-conductthis.jpg) center center",
-        "background-size": "cover",
-        "min-height": "1050px"
+        "background-color": "#242751",
+        "background-image": "url(/images/product-header-conductthis.jpg)",
+        "background-position": "bottom center",
+        "background-repeat": "no-repeat",
+        "min-height": "1250px"
       },
       ".product-header__name": {
         "color": "#fff"
