@@ -50,6 +50,7 @@
     outline: none;
     background-color: $color_purple;
     color: white;
+    cursor: pointer;
     border: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -58,6 +59,10 @@
 
     margin-left: -4px;
     padding: 15px 20px;
+
+    &:hover {
+      background-color: darken($color_purple, 10%);
+    }
   }
 
   @include e(thanks) {
@@ -67,5 +72,13 @@
 
     display: none;
     margin-top: 20px;
+  }
+}
+
+@include breakpoint(330px) {
+  .newsletter {
+    @include e(email) {
+      padding-right: 0;
+    }
   }
 }
