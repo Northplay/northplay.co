@@ -65,3 +65,53 @@ body {
     padding-left: 10px;
   }
 }
+
+@include breakpoint(800px) {
+  .product-section:nth-child(odd) .product {
+    // flex-direction: column-reverse;
+  }
+
+  .product {
+    flex-wrap: wrap;
+    padding: 60px 10px;
+
+    @include e(preview) {
+      flex-basis: 100%;
+      margin-bottom: 60px;
+
+      img {
+        max-width: 90%;
+      }
+    }
+
+    @include e(info) {
+      align-items: center;
+      text-align: center;
+      padding: 0 0;
+    }
+  }
+}
+
+@include breakpoint(460px) {
+  .product {
+    @include e(name) {
+      @include rem(font-size, 2.0rem);
+      @include rem(line-height, 2.6rem);
+    }
+
+    @include e(description) {
+      @include rem(font-size, 1.2rem);
+      @include rem(line-height, 1.6rem);
+    }
+
+    @include e(learn-more) {
+
+      padding: 12px 35px;
+
+      @include rem(font-size, 1.3rem);
+      @include rem(line-height, 1.6rem);
+      cursor: pointer;
+      border-radius: 20px;
+    }
+  }
+}
