@@ -49,6 +49,9 @@
       },
       ".product-detail__link": {
         "color": "#6586f1"
+      },
+      ".product-page__content h2": {
+        "color": "#6586f1"
       }
     }
   }

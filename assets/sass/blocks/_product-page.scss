@@ -15,6 +15,12 @@
     @include rem(line-height, 1.5rem);
   }
 
+  h2 {
+    @include rem(font-size, 2.4rem);
+    @include rem(line-height, 2.8rem);
+    margin-top: 0;
+  }
+
   .video {
     float: none;
     clear: both;
@@ -22,6 +28,7 @@
     position: relative;
     padding-bottom: 56.25%;
     // padding-top: 25px;
+    margin-top: 30px;
     height: 0;
 
     iframe {
