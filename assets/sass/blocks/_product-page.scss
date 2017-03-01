@@ -6,14 +6,22 @@
   flex: 1 1 100%;
   display: flex;
   flex-flow: row wrap;
+  align-items: flex-start;
 
-  @include rem(font-size, 1.2rem);
-  @include rem(line-height, 1.7rem);
+  @include rem(font-size, 1.1rem);
+  @include rem(line-height, 1.6rem);
 
   h2 {
     @include rem(font-size, 2.4rem);
     @include rem(line-height, 2.8rem);
     margin-top: 0;
+  }
+
+  h3 {
+    @include rem(font-size, 2.2rem);
+    @include rem(line-height, 2.6rem);
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   p, span, em, li {
@@ -23,9 +31,38 @@
 
   }
 
+  img {
+    flex: 0 1 auto;
+    max-width: 100%;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .grid {
+    flex: 1 1 45%;
+    justify-content: center;
+    margin-right: 5px;
+    margin-bottom: 15px;
+
+    & + .grid {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+  }
+
   .half {
-    flex: 0 1 50%;
-    margin: 30px 0;
+    // display: flex;
+    // flex-flow: column nowrap;
+    flex: 1 1 43%;
+    margin: 100px 0;
+    padding: 0 15px;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  .podcast {
+    margin-top: 30px;
   }
 
   .video {

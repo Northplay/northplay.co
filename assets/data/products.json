@@ -64,6 +64,9 @@
       },
       ".product-start__content h2": {
         "color": "#6586f1"
+      },
+      ".product-page__content h3": {
+        "color": "#c12604"
       }
     }
   }
