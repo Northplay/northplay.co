@@ -107,6 +107,23 @@
     @include rem(font-size, 1.9rem);
     text-align: center;
   }
+
+  @include e(links) {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include e(link) {
+    margin-top: 10px;
+    @include rem(font-size, 1.3rem);
+    @include rem(line-height, 1.6rem);
+    color: #fff;
+    font-weight: $font_weight_heavy;
+    text-decoration: none;
+    margin: 0 10px;
+  }
 }
 
 @include breakpoint(850px) {

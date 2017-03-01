@@ -54,8 +54,18 @@ $(document).ready(function() {
   if (videoElement != null) {
     videoElement.oncanplay = loadVideo;
   }
-  
+
   $('#newsletter_form').on('submit', handle_newsletter_submit);
+
+  $('.smooth-scroll').click(function (e) {
+    const diff = e.target.href.replace(window.location.href, "");
+    if (diff.startsWith('#')) {
+      e.preventDefault();
+      $('html, body').animate({
+        scrollTop: $(diff).offset().top
+      }, 800);
+    }
+  });
 
   Retina.init(window);
 });

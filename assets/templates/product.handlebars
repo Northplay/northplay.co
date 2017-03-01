@@ -14,6 +14,11 @@
     <div class="product-header__content">
       <div class="product-header__name">{{data.product.name}}</div>
       <div class="product-header__tagline">{{data.product.tagline}}</div>
+      <div class="product-header__links">
+        {{#each data.product.headerLinks as |link text|}}
+          <a href="{{link}}" class="product-header__link smooth-scroll">{{{text}}}</a>
+        {{/each}}
+      </div>
     </div>
   </div>
 </section>

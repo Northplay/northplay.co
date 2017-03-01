@@ -58,6 +58,12 @@ body {
     border-radius: 20px;
     text-decoration: none;
     user-select: none;
+
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
   }
 
   @include e(publisher) {
