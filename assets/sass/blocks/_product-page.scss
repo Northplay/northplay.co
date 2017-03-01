@@ -5,12 +5,19 @@
 .product-content {
   flex: 1 1 100%;
   @include rem(font-size, 1.2rem);
-  @include rem(line-height, 1.5rem);
+  @include rem(line-height, 1.7rem);
 
   h2 {
     @include rem(font-size, 2.4rem);
     @include rem(line-height, 2.8rem);
     margin-top: 0;
+  }
+
+  p, span, em, li {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    color: #2b2b2b;
+    // font-weight: 400;
+
   }
 
   .video {
@@ -62,21 +69,26 @@
 }
 
 .product-detail {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+
   @include e(title) {
-    @include rem(font-size, 0.9rem);
-    font-weight: $font_weight_heavy;
+    @include rem(font-size, 0.8rem);
+    font-weight: bold;
     color: #a2a2a2;
     margin-top: 30px;
+    margin-bottom: 3px;
   }
 
   @include e(value) {
     color: #2b2b2b;
+    @include rem(font-size, 0.9rem);
   }
 
   @include e(link) {
     display: block;
     color: blue;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    @include rem(font-size, 0.9rem);
 
     &:hover {
       color: #212121;
@@ -92,19 +104,19 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 170px;
     padding: 0 10px;
   }
 
   @include e(name) {
-    @include rem(font-size, 4.2rem);
+    @include rem(font-size, 4.8rem);
     color: #fff;
     font-weight: $font_weight_heavy;
     text-align: center;
   }
 
   @include e(tagline) {
-    @include rem(font-size, 1.9rem);
+    @include rem(font-size, 2.1rem);
     text-align: center;
   }
 
@@ -117,6 +129,7 @@
 
   @include e(link) {
     margin-top: 10px;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     @include rem(font-size, 1.3rem);
     @include rem(line-height, 1.6rem);
     color: #fff;
