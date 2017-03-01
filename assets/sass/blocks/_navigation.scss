@@ -10,14 +10,13 @@
     height: 78px;
 
     svg + svg {
-      // margin-top: -6px;
       margin-left: 15px;
     }
 
     transition: all 0.15s ease-in-out;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 

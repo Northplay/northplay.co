@@ -25,6 +25,19 @@
     transition: opacity 0.5s ease-out;
     opacity: 0;
   }
+
+  @include e(gradient) {
+    background-color: transparent;
+    background-image: url('/images/header-gradient.png');
+    background-size: 2560px 194px;
+    background-repeat: repeat-x;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 194px;
+    right: 0;
+  }
 }
 
 @include b(header) {
@@ -73,10 +86,11 @@
     padding: 20px 45px;
     margin-top: 50px;
 
-    transition: all 0.15s ease-in-out;
+    transition: all 0.12s ease-in-out;
 
     &:hover {
-      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0px 0px 20px 10px rgba(255, 239, 63, 0.4);
+      transform: translateY(-3px) scale(1.05);
     }
   }
 }
