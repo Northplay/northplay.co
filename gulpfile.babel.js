@@ -48,7 +48,7 @@ const config = {
     js: './assets/js/main.js',
     videos: './assets/videos/*.{webm,mp4}',
     favicon: './assets/favicon/*{.png,jpg,svg}',
-    copyfiles: ['manifest.json','browserconfig.xml','favicon.ico'],
+    copyfiles: ['manifest.json','browserconfig.xml','favicon.ico','./assets/audio/*.mp3'],
     data: './assets/data/**/*.json',
     pages: './assets/pages/*.handlebars'
   },
