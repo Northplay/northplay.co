@@ -79,11 +79,11 @@ function whenInView(el, action) {
 
 function startAnimations() {
   $('.animateWhenInView').each(function () {
-    whenInView(this, () => {});
+    whenInView(this, function() {});
   });
 
   $('.startPlaybackWhenInView').each(function () {
-    whenInView(this, ($video) => {
+    whenInView(this, function ($video) {
       const id = $video.attr('id');
       document.getElementById(id).play();
     });
