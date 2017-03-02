@@ -7,6 +7,9 @@
     "publisher": "Self Published",
     "type": "Game",
     "platforms": ["ios", "android"],
+    "video": {
+      "video/mp4": "https://s3.amazonaws.com/static.northplay.co/Islands_13.mp4"
+    },
     "links": {
       "App Store": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
       "Google Play": "https://play.google.com/store/apps/details?id=co.northplay.ConductTHIS",
@@ -19,11 +22,11 @@
       "🚄 &nbsp;Read Story": "#exploding_millions"
     },
     "wemade": "Everything",
-    "tint": "rgb(19, 78, 159)",
+    "tint": "rgb(13, 63, 151)",
     "fill": "#698BFA",
     "style": {
-      ".product-section--conductthis": {
-        "background": "linear-gradient(rgb(19,78,159),rgb(26,54,92));"
+      ".product-section video": {
+        "border-right": "1px solid rgb(13, 63, 151)"
       },
       ".product--conductthis": {
         "color": "#fff"

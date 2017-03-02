@@ -63,17 +63,31 @@ function isElementInView(el) {
   return ((elTop < viewportBottom) && (elBottom > viewportTop));
 }
 
+function whenInView(el, action) {
+  $this = $(el);
+  // if ($this.hasClass('inView')) {
+  //   return;
+  // }
+
+  if (isElementInView($this) && !$this.hasClass('inView')) {
+    $this.addClass('inView');
+    action($this);
+  } else if(!isElementInView($this) && $this.hasClass('inView')) {
+    $this.removeClass('inView');
+  }
+}
+
 function startAnimations() {
   $('.animateWhenInView').each(function () {
-    $this = $(this);
-    if ($this.hasClass('inView')) {
-      return;
-    }
-
-    if (isElementInView($this)) {
-      $this.addClass('inView');
-    }
+    whenInView(this, () => {});
   });
+
+  $('.startPlaybackWhenInView').each(function () {
+    whenInView(this, ($video) => {
+      const id = $video.attr('id');
+      document.getElementById(id).play();
+    });
+  })
 }
 
 $(document).ready(function() {

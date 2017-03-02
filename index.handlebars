@@ -2,8 +2,8 @@
 
 <section class="header-section">
   <video class="header-section__big-video" playsinline autoplay muted loop poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="big_video" style="visibility:none;" onplay="var s=this;setTimeout(function(){s.style.visibility='visible';},100);">
-    <source src="/videos/background-loop.mp4" type="video/mp4">
-    <source src="/videos/background-loop.webm" type="video/webm">
+    <source src="https://s3.amazonaws.com/static.northplay.co/background-loop.mp4" type="video/mp4">
+    <source src="https://s3.amazonaws.com/static.northplay.co/background-loop.webm" type="video/webm">
   </video>
 
   {{> navigation "rgba(255, 255, 255, 0.6)" }}
@@ -34,7 +34,15 @@
 <section class="product-section product-section--{{id}}" style="background-color: {{tint}}">
   <div class="product product--{{id}}">
     <div class="product__preview">
-      <img src="/images/product-preview-{{id}}.png" data-at2x="/images/product-preview-{{id}}_2x.png">
+      {{#if video}}
+        <video style="background-color: {{tint}};" class="startPlaybackWhenInView" id="video_{{id}}">
+          {{#each video as |src type|}}
+            <source src="{{src}}" type="{{type}}">
+          {{/each}}
+        </video>
+      {{else}}
+        <img src="/images/product-preview-{{id}}.png" data-at2x="/images/product-preview-{{id}}_2x.png">
+      {{/if}}
     </div>
     <div class="product__info animateWhenInView">
       <a href="/{{id}}" class="product__icon">
