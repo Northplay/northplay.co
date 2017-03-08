@@ -104,6 +104,10 @@
     @include e(big-video) {
       display: none;
     }
+
+    @include e(gradient) {
+      display: none;
+    }
   }
 
   @include b(header) {
