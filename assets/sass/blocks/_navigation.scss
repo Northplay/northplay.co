@@ -50,3 +50,30 @@
     }
   }
 }
+
+@include breakpoint(450px) {
+  .navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include e(logo) {
+      flex-direction: column;
+      height: auto;
+
+      svg + svg {
+        margin: -10px 0 0 0;
+      }
+    }
+
+    @include e(left) {
+      flex: 1 1 100%;
+      justify-content: center;
+      margin-bottom: 0px;
+    }
+
+    @include e(right) {
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+  }
+}
