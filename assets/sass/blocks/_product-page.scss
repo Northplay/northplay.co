@@ -188,6 +188,32 @@
   }
 }
 
+@include breakpoint(620px) {
+  .header-section.header-section--product-page {
+    min-height: 1000px;
+    background-size: 300% auto;
+  }
+
+  .product-header {
+    @include e(content) {
+      margin-top: 20px;
+    }
+
+    @include e(name) {
+      @include rem(font-size, 3.2rem);
+    }
+
+    @include e(tagline) {
+      @include rem(font-size, 1.6rem);
+    }
+
+    @include e(link) {
+      @include rem(font-size, 1.2rem);
+      @include rem(line-height, 1.4rem);
+    }
+  }
+}
+
 @include breakpoint(850px) {
   .product-start {
     @include e(details) {
