@@ -3,6 +3,12 @@ var Ladda = require('ladda');
 var Retina = require('retina.js').Retina;
 var videoElement = document.getElementById('big_video');
 
+const trackEvent = function(a, b, c) {
+  if (ga !== undefined) {
+    ga('send', 'event', a, b, c);
+  }
+}
+
 var loadVideo = function() {
   setTimeout(function() {
     videoElement.style.opacity = '1';
@@ -10,6 +16,8 @@ var loadVideo = function() {
 };
 
 const handle_newsletter_submit = function(e) {
+  trackEvent('Button', 'Click', 'Subscribe');
+
   e.preventDefault();
   var $email = $(this).find('input[name=email]');
   var $submit = $(this).find('input[type=submit]');
@@ -40,11 +48,13 @@ const handle_newsletter_submit = function(e) {
       $('.newsletter__form').hide();
       $('.newsletter__thanks').show();
       Ladda.stopAll();
+      trackEvent('Subscribe', 'Completed', '');
     },
     error: function (xhr, status, error) {
       $email.prop('disabled', false);
       $submit.prop('disabled', false);
       Ladda.stopAll();
+      trackEvent('Subscribe', 'Failed', '');
     }
   });
 };
@@ -64,9 +74,6 @@ function isElementInView(el) {
 
 function whenInView(el, action) {
   $this = $(el);
-  // if ($this.hasClass('inView')) {
-  //   return;
-  // }
 
   if (isElementInView($this) && !$this.hasClass('inView')) {
     $this.addClass('inView');
