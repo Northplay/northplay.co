@@ -1,0 +1,56 @@
+.greenlight-banner-container {
+  background: linear-gradient(180deg, #aff001, #7fcf00);
+}
+
+.greenlight {
+  @include flex_container;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  text-transform: uppercase;
+  font-weight: bold;
+  
+  &__text {
+    margin-right: 20px;
+    text-align: right;
+  }
+  
+  &__title {
+    color: #000;
+    @include rem(font-size, 2.0rem);
+    @include rem(line-height, 2.6rem);
+    margin-top: 10px;
+  }
+  
+  &__subtitle {
+    color: #557416;
+    @include rem(font-size, 1.5rem);
+    @include rem(line-height, 1.9rem);
+  }
+  
+  &__button {
+    display: block;
+    height: 92px;
+  }
+}
+
+@include breakpoint(920px) {
+  .greenlight-banner-container {
+    padding: 15px 0;
+  }
+  
+  @include b(greenlight) {
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    &__text {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    
+    &__button {
+      margin-top: 10px;
+    }
+  
+  }
+}

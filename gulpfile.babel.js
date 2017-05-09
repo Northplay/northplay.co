@@ -227,7 +227,8 @@ gulp.task('subpages', () => {
       get newsletter() { return load_partial('newsletter') },
       get product() { return load_partial('product') },
       get details() { return load_partial('details') },
-      get navigation() { return load_partial('navigation') }
+      get navigation() { return load_partial('navigation') },
+      get greenlight() { return load_partial('greenlight') }
     },
     helpers: {
       img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)
