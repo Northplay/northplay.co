@@ -1,9 +1,10 @@
 [
   {
+    "published": true,
     "id": "conductthis",
     "name": "Conduct THIS!",
     "tagline": "A game of explosive railway action for iOS & Android",
-    "description": "Set in a stunning world, with incredibly simple controls you race against time to bring passengers safely to their destination by commanding trains, switching tracks and avoiding collisions in increasingly challenging action-puzzles.",
+    "description": "",
     "publisher": "Self Published",
     "type": "Game",
     "platforms": ["ios", "android"],
@@ -21,7 +22,7 @@
       "📲 &nbsp;Download": "https://conductthis.com",
       "🚄 &nbsp;Read Story": "#exploding_millions"
     },
-    "wemade": "Everything",
+    "wemade": ["Everything"],
     "tint": "rgb(13, 63, 151)",
     "fill": "#698BFA",
     "style": {
@@ -67,6 +68,72 @@
       },
       ".product-start__content h2": {
         "color": "#6586f1"
+      },
+      ".product-page__content h3": {
+        "color": "#c12604"
+      }
+    }
+  },
+  {
+    "published": false,
+    "id": "minbio",
+    "name": "MinBio",
+    "tagline": "An Entertainment Universe for Kids",
+    "description": "",
+    "publisher": "Self Published",
+    "type": "App",
+    "platforms": ["ios", "tvos"],
+    "links": {
+      "App Store": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
+      "MinBio.dk": "http://www.minbio.dk"
+    },
+    "headerLinks": {
+      "📲 &nbsp;Download": "https://conductthis.com",
+      "🍿 &nbsp;Read Case": "#child_universe"
+    },
+    "wemade": ["Development", "Design", "tvOS & iOS"],
+    "tint": "#ff3750",
+    "fill": "#ff3750",
+    "style": {
+      ".product-section video": {
+        "border-right": "1px solid rgb(13, 63, 151)"
+      },
+      ".product--conductthis": {
+        "color": "#fff"
+      },
+      ".product--conductthis .product__learn-more": {
+        "background-color": "rgb(22, 188, 251)",
+        "color": "rgb(9, 17, 53)"
+      },
+      ".product--conductthis .product__learn-more:hover": {
+        "box-shadow": "0px 0px 20px 10px rgba(22, 188, 251, 0.2)"
+      },
+      ".product--conductthis .product__publisher": {
+        "color": "rgb(21, 99, 247)"
+      }
+    },
+    "pageStyle": {
+      ".header-section": {
+        "background-color": "#8b1b1b",
+        "min-height": "1340px"
+      },
+      ".product-header__name": {
+        "color": "#fff"
+      },
+      ".product-header__tagline": {
+        "color": "#ff3750"
+      },
+      ".product-header__link": {
+        "color": "#fffa56"
+      },
+      ".product-header__link:hover": {
+        "color": "#fff"
+      },
+      ".product-detail__link": {
+        "color": "#ff3750"
+      },
+      ".product-start__content h2": {
+        "color": "#ff3750"
       },
       ".product-page__content h3": {
         "color": "#c12604"

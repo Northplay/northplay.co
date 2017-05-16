@@ -33,6 +33,7 @@
 </style>
 
 {{#each data.products }}
+{{#if published}}
 <section class="product-section product-section--{{id}}" style="background-color: {{tint}}">
   <div class="product product--{{id}}">
     <div class="product__preview">
@@ -57,6 +58,7 @@
     </div>
   </div>
 </section>
+{{/if}}
 {{/each}}
 
 {{!-- === PRODUCT END === Conduct THIS! === --}}

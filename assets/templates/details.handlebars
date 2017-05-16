@@ -7,7 +7,9 @@
   <div class="product-detail__value">{{publisher}}</div>
 
   <div class="product-detail__title">What we did</div>
-  <div class="product-detail__value">{{wemade}}</div>
+  {{#each wemade}}
+    <div class="product-detail__value">{{this}}</div>
+  {{/each}}
 
   <div class="product-detail__title">Links</div>
   {{#each links as |link name|}}
