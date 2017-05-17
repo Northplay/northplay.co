@@ -229,7 +229,8 @@ gulp.task('subpages', () => {
       get details() { return load_partial('details') },
       get navigation() { return load_partial('navigation') },
       get greenlight() { return load_partial('greenlight') },
-      get needateam() { return load_partial('needateam') }
+      get needateam() { return load_partial('needateam') },
+      get wedo() { return load_partial('wedo') }
     },
     helpers: {
       img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)

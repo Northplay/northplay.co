@@ -4,7 +4,7 @@
     "id": "conductthis",
     "name": "Conduct THIS!",
     "tagline": "A game of explosive railway action for iOS & Android",
-    "description": "",
+    "description": "Set in a stunning world, with incredibly simple controls you race against time to bring passengers safely to their destination by commanding trains, switching tracks and avoiding collisions in increasingly challenging action-puzzles.",
     "publisher": "Self Published",
     "type": "Game",
     "platforms": ["ios", "android"],
@@ -115,7 +115,10 @@
     "pageStyle": {
       ".header-section": {
         "background-color": "#8b1b1b",
-        "min-height": "1340px"
+        "background-image": "url(/images/case-minbio-header-bg.jpg)",
+        "background-position": "bottom center",
+        "background-repeat": "no-repeat",
+        "min-height": "1330px"
       },
       ".product-header__name": {
         "color": "#fff"

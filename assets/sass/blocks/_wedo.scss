@@ -2,8 +2,7 @@
   @include flex_container;
   display: flex;
   flex-wrap: wrap;
-
-  padding: 100px 0;
+  margin: 150px auto;
 
   @include e(thing) {
     flex: 1 1 33%;
