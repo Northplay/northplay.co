@@ -1,0 +1,48 @@
+.needateam {
+  @include flex_container;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 100px auto;
+  
+  &__title {
+    @include rem(font-size, 2.5rem);
+    @include rem(line-height, 2.8rem);
+    font-weight: $font_weight_heavy;
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  
+  &__about {
+    color: #b6b6b6;
+    @include rem(font-size, 1.2rem);
+    @include rem(line-height, 1.6rem);
+    font-weight: $font_weight_book;
+    text-align: center;
+
+    max-width: 720px;
+    margin: 10px auto 20px auto;
+  }
+  
+  &__talk {
+    @include rem(font-size, 1.6rem);
+    @include rem(line-height, 1.6rem);
+    background-color: rgba(255, 239, 63, 1);
+    color: #000;
+    cursor: pointer;
+    border-radius: 25px;
+    text-decoration: none;
+    user-select: none;
+
+    display: inline-block;
+    padding: 20px 55px;
+
+    transition: all 0.12s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 0px 20px 10px rgba(255, 239, 63, 0.4);
+      transform: translateY(-3px) scale(1.05);
+    }
+  }
+}
