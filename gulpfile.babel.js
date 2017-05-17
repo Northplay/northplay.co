@@ -143,7 +143,7 @@ function read_data(name) {
 function image_helper(path, cls = null, alt = "", has_retina = true) {
   const retina = retina_path(path);
   var str = `<img src="/images/${path}"`;
-  if (retina) {
+  if (has_retina) {
     str += ` data-at2x="/images/${retina}"`;
   }
   if (typeof cls === 'string') {
@@ -233,7 +233,7 @@ gulp.task('subpages', () => {
       get wedo() { return load_partial('wedo') }
     },
     helpers: {
-      img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)
+      img: (path, cls = null, has_retina = true, alt = "") => image_helper(path, cls, alt, has_retina)
     }
   };
 

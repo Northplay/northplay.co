@@ -1,19 +1,25 @@
+.newsletter-section {
+  background-image: url(/images/newsletter-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 75px 0;
+}
+
 @include b(newsletter) {
   @include flex_container;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 100px auto;
+  color: #fff;
 
   @include e(title) {
-    color: $color_purple;
     @include rem(font-size, 2.5rem);
     @include rem(line-height, 3.3rem);
     font-weight: $font_weight_heavy;
+    margin-bottom: 10px;
   }
 
   @include e(about) {
-    color: rgb(43, 43, 43);
     @include rem(font-size, 1.2rem);
     @include rem(line-height, 1.6rem);
     font-weight: $font_weight_book;
@@ -29,8 +35,8 @@
 
   @include e(email) {
     outline: none;
-    background-color: rgb(235, 235, 235);
-    border: 2px solid rgb(224, 224, 224);
+    background-color: #fff;
+    border: 2px solid #00eaff;
     border-right: none;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -41,15 +47,15 @@
     margin: 0;
 
     &::placeholder {
-      color: rgb(189, 189, 189);
+      color: #bdbdbd;
     }
   }
 
   @include e(submit) {
     appearance: none;
     outline: none;
-    background-color: $color_purple;
-    color: white;
+    background-color: #00eaff;
+    color: #2c47ad;
     cursor: pointer;
     border: none;
     border-top-right-radius: 20px;
@@ -61,14 +67,15 @@
     padding: 15px 20px;
 
     &:hover {
-      background-color: darken($color_purple, 10%);
+      box-shadow: 0px 0px 20px 10px rgba(0, 234, 255, 0.25);
+      // background-color: darken(#00eaff, 10%);
     }
   }
 
   @include e(thanks) {
     font-weight: $font_weight_heavy;
-    @include rem(font-size, 1.3rem);
-    @include rem(line-height, 1.3rem);
+    @include rem(font-size, 1.8rem);
+    @include rem(line-height, 2.4rem);
 
     display: none;
     margin-top: 20px;
