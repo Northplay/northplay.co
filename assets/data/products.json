@@ -27,7 +27,6 @@
     "fill": "#698BFA",
     "style": {
       ".product-section video": {
-        "border-right": "1px solid rgb(13, 63, 151)"
       },
       ".product--conductthis": {
         "color": "#fff"
@@ -96,7 +95,6 @@
     "fill": "#ff3750",
     "style": {
       ".product-section video": {
-        "border-right": "1px solid rgb(13, 63, 151)"
       },
       ".product--conductthis": {
         "color": "#fff"
