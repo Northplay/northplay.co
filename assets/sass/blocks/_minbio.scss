@@ -1,0 +1,80 @@
+.minbio-journey {
+  @include flex_container;
+  background-color: #6a080e;
+  color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 50px auto;
+  
+  &__part {
+    flex: 1 1 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  &__part--interface {
+    .minbio-journey__gif {
+      order: 2;
+    }
+    
+    .minbio-journey__text {
+      order: 1;
+      margin-left: 0px;
+      margin-right: 40px;
+      text-align: right;
+    }
+  }
+  
+  &__text {
+    margin-left: 40px;
+  }
+  
+  h3 {
+    color: #fee500;
+    @include rem(font-size, 2rem);
+    margin: 0;
+  }
+  
+  p {
+    margin: 10px 0 0 0;
+  }
+}
+
+@include breakpoint(950px) {
+  .minbio-journey {
+    &__part {
+      flex-wrap: wrap;
+    }
+    
+    &__gif, &__text {
+      flex: 1 1 100%;
+      text-align: center !important;
+      margin: 0;
+    }
+    
+    &__gif {
+      text-align: center;
+      
+      img {
+        max-width: 100%;
+        height: auto !important;
+      }
+    }
+    
+    &__text {
+      margin-top: 20px;
+    }
+    
+    &__part--interface {
+      .minbio-journey__gif {
+        order: 1;
+      }
+      
+      .minbio-journey__text {
+        order: 2;
+      }
+    }
+  }
+}
