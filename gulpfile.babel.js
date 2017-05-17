@@ -293,7 +293,14 @@ gulp.task('index', () => {
       get navigation() { return load_partial('navigation') }
     },
     helpers: {
-      img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina)
+      img: (path, cls = null, has_retina = true) => image_helper(path, cls, has_retina),
+      ifCond: function (v1, v2, opts) {
+        if (v1 == v2) {
+          return opts.fn(this);
+        } else {
+          return opts.inverse(this);
+        }
+      }
     }
   };
 

@@ -3,14 +3,37 @@
   to { opacity: 1; transform: translateX(0);}
 }
 
-.product-section:nth-child(even) .product {
+@keyframes fadeNmoveReversed {
+  from { opacity: 0; transform: translateX(-150px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+
+.product-section {
+  position: relative;
   flex-direction: row-reverse;
+  
+  &__transition {
+    position: absolute;
+    top: -275px;
+    height: 550px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.product-section:nth-child(even) .product {
+  flex-direction: row;
+  
+  .product__info.inView {
+    animation-name: fadeNmove;
+  }
 }
 
 @include b(product) {
   @include flex_container;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row-reverse nowrap;
+  position: relative;
 
   padding: 300px 0;
 
@@ -32,7 +55,7 @@
     opacity: 0;
 
     &.inView {
-      animation: fadeNmove 0.6s;
+      animation: fadeNmoveReversed 0.6s;
       animation-fill-mode: forwards;
       animation-delay: 0.5s;
     }

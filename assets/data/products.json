@@ -74,14 +74,17 @@
     }
   },
   {
-    "published": false,
+    "published": true,
     "id": "minbio",
     "name": "MinBio",
     "tagline": "An Entertainment Universe for Kids",
-    "description": "",
+    "description": "With MinBio you get access to Nordisk Film’s childrens universe with all the latest danish movies and series for children. We made their iOS & tvOS apps featuring a rich and playful interface that entertains children of all ages.",
     "publisher": "Nordisk Film",
     "type": "App",
     "platforms": ["ios", "tvos"],
+    "video": {
+      "video/mp4": "https://s3.amazonaws.com/static.northplay.co/minbio.mp4"
+    },
     "links": {
       "App Store": "https://itunes.apple.com/dk/app/minbio/id552801149?l=da&mt=8",
       "MinBio.dk": "http://www.minbio.dk"
@@ -91,23 +94,25 @@
       "🍿 &nbsp;Read Case": "#child_universe"
     },
     "wemade": ["Development", "Design", "tvOS & iOS"],
-    "tint": "#ff3750",
+    "tint": "rgb(126, 22, 14)",
     "fill": "#ff3750",
     "style": {
-      ".product-section video": {
+      ".product-section--minbio .product-section__transition": {
+        "background-image": "url(/images/bluetored.png)",
+        "background-position": "0 0"
       },
-      ".product--conductthis": {
+      ".product--minbio": {
         "color": "#fff"
       },
-      ".product--conductthis .product__learn-more": {
-        "background-color": "rgb(22, 188, 251)",
-        "color": "rgb(9, 17, 53)"
+      ".product--minbio .product__learn-more": {
+        "background-color": "#fffa56",
+        "color": "#000"
       },
-      ".product--conductthis .product__learn-more:hover": {
-        "box-shadow": "0px 0px 20px 10px rgba(22, 188, 251, 0.2)"
+      ".product--minbio .product__learn-more:hover": {
+        "box-shadow": "0px 0px 20px 10px rgba(255, 239, 63, 0.4)"
       },
-      ".product--conductthis .product__publisher": {
-        "color": "rgb(21, 99, 247)"
+      ".product--minbio .product__publisher": {
+        "color": "#ff3750"
       }
     },
     "pageStyle": {
