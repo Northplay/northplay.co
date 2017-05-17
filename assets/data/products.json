@@ -84,11 +84,11 @@
     "type": "App",
     "platforms": ["ios", "tvos"],
     "links": {
-      "App Store": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
+      "App Store": "https://itunes.apple.com/dk/app/minbio/id552801149?l=da&mt=8",
       "MinBio.dk": "http://www.minbio.dk"
     },
     "headerLinks": {
-      "📲 &nbsp;Download": "https://conductthis.com",
+      "📲 &nbsp;Download": "https://itunes.apple.com/dk/app/minbio/id552801149?l=da&mt=8",
       "🍿 &nbsp;Read Case": "#child_universe"
     },
     "wemade": ["Development", "Design", "tvOS & iOS"],
