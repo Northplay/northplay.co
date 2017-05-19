@@ -34,41 +34,45 @@
 
 {{#each data.products }}
 {{#if published}}
-<section class="product-section product-section--{{id}}" style="background-color: {{tint}}">
-  <div class="product-section__transition"></div>
-  <div class="product product--{{id}}">
-    <div class="product__preview">
-      {{#if video}}
-        <video style="background-color: {{tint}};" class="startPlaybackWhenInView" id="video_{{id}}">
-          {{#each video as |src type|}}
-            <source src="{{src}}" type="{{type}}">
-          {{/each}}
-        </video>
+  <section class="product-section product-section--{{id}}" style="background-color: {{tint}}">
+    <div class="product-section__transition"></div>
+    <div class="product product--{{id}}">
+      {{#ifCond id "conductthis"}}
+        <div class="product__preview">
+          <div class="tiles animateWhenInView">
+          <img src="/images/product-conductthis-island-1.png" class="tile tile1" />
+          <img src="/images/product-conductthis-island-2.png" class="tile tile2" />
+          <img src="/images/product-conductthis-island-3.png" class="tile tile3" />
+          <img src="/images/product-conductthis-island-4.png" class="tile tile4" />
+          <img src="/images/product-conductthis-island-5.png" class="tile tile5" />
+          <img src="/images/product-conductthis-island-6.png" class="tile tile6" />
+          <img src="/images/product-conductthis-island-7.png" class="tile tile7" />
+        </div>
+        </div>
       {{else}}
-        <img src="/images/product-preview-{{id}}.png" data-at2x="/images/product-preview-{{id}}_2x.png">
-      {{/if}}
-    </div>
-    <div class="product__info animateWhenInView">
-      <a href="/{{id}}" class="product__icon">
-        <img src="/images/product-icon-{{id}}.png" data-at2x="/images/product-icon-{{id}}_2x.png" alt="{{name}} App icon">
-      </a>
+        <div class="product__preview">
+          <img src="/images/product-preview-{{id}}_2x.png" alt="{{name}} preview" />
+        </div>
+      {{/ifCond}}
+      <div class="product__info animateWhenInView">
+        <a href="/{{id}}" class="product__icon">
+          <img src="/images/product-icon-{{id}}.png" data-at2x="/images/product-icon-{{id}}_2x.png" alt="{{name}} App icon">
+        </a>
       <div class="product__name">{{name}}</div>
-      <div class="product__description">{{description}}</div>
-      <a href="/{{id}}" class="product__learn-more">Learn more</a>
-      <div class="product__publisher">
-        {{#ifCond publisher "Self Published"}}
-          {{publisher}}
-        {{else}}
-          Made for {{publisher}}
-        {{/ifCond}}
+        <div class="product__description">{{description}}</div>
+          <a href="/{{id}}" class="product__learn-more">Learn more</a>
+          <div class="product__publisher">
+            {{#ifCond publisher "Self Published"}}
+              {{publisher}}
+            {{else}}
+              Made for {{publisher}}
+            {{/ifCond}}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+  </section>
 {{/if}}
 {{/each}}
-
-{{!-- === PRODUCT END === Conduct THIS! === --}}
 
 {{> wedo}}
 {{> newsletter}}

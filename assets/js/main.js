@@ -87,22 +87,15 @@ function startAnimations() {
   $('.animateWhenInView').each(function () {
     whenInView(this, function() {});
   });
-
-  $('.startPlaybackWhenInView').each(function () {
-    whenInView(this, function ($video) {
-      const id = $video.attr('id');
-      document.getElementById(id).play();
-    });
-  })
 }
 
 $(document).ready(function() {
   if (videoElement != null) {
     videoElement.oncanplay = loadVideo;
   }
-
+  
   $('#newsletter_form').on('submit', handle_newsletter_submit);
-
+  
   $('.smooth-scroll').click(function (e) {
     const diff = e.target.href.replace(window.location.href, "");
     if (diff.startsWith('#')) {
@@ -112,7 +105,7 @@ $(document).ready(function() {
       }, 800);
     }
   });
-
+  
   $(window).scroll(startAnimations);
   startAnimations();
 

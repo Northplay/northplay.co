@@ -8,9 +8,6 @@
     "publisher": "Self Published",
     "type": "Game",
     "platforms": ["ios", "android"],
-    "video": {
-      "video/mp4": "https://s3.amazonaws.com/static.northplay.co/Islands_13.mp4"
-    },
     "links": {
       "App Store": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
       "Google Play": "https://play.google.com/store/apps/details?id=co.northplay.ConductTHIS",
@@ -22,14 +19,26 @@
       "📲 &nbsp;Download": "https://conductthis.com",
       "🚄 &nbsp;Read Story": "#exploding_millions"
     },
+    "previews": {
+      "island-1": "/images/product-conductthis-island-1.png"
+    },
     "wemade": ["Everything"],
-    "tint": "rgb(13, 63, 151)",
+    "tint": "#124295",
     "fill": "#698BFA",
     "style": {
-      ".product-section video": {
-      },
       ".product--conductthis": {
         "color": "#fff"
+      },
+      ".product--conductthis .product__preview": {
+        "position": "relative"
+      },
+      ".product--conductthis .preview": {
+        "position": "absolute",
+        "display": "block"
+      },
+      ".product--conductthis .island-1": {
+        "height": "155px",
+        "width": "193px"
       },
       ".product--conductthis .product__learn-more": {
         "background-color": "rgb(22, 188, 251)",
@@ -82,9 +91,6 @@
     "publisher": "Nordisk Film",
     "type": "App",
     "platforms": ["ios", "tvos"],
-    "video": {
-      "video/mp4": "https://s3.amazonaws.com/static.northplay.co/minbio.mp4"
-    },
     "links": {
       "App Store": "https://itunes.apple.com/dk/app/minbio/id552801149?l=da&mt=8",
       "MinBio.dk": "http://www.minbio.dk"
@@ -94,7 +100,7 @@
       "🍿 &nbsp;Read Case": "#child_universe"
     },
     "wemade": ["Development", "Design", "tvOS & iOS"],
-    "tint": "rgb(126, 22, 14)",
+    "tint": "#7e160e",
     "fill": "#ff3750",
     "style": {
       ".product-section--minbio .product-section__transition": {

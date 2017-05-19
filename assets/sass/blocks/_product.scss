@@ -8,19 +8,6 @@
   to { opacity: 1; transform: translateX(0);}
 }
 
-.product-section {
-  position: relative;
-  flex-direction: row-reverse;
-  
-  &__transition {
-    position: absolute;
-    top: -275px;
-    height: 550px;
-    width: 100%;
-    left: 0;
-  }
-}
-
 .product-section:nth-child(even) .product {
   flex-direction: row;
   
@@ -53,6 +40,7 @@
     flex: 1 1 50%;
     padding: 0 60px;
     opacity: 0;
+    z-index: 100;
 
     &.inView {
       animation: fadeNmoveReversed 0.6s;
@@ -103,7 +91,7 @@
   }
 }
 
-@include breakpoint(800px) {
+@include breakpoint(1000px) {
   .product-section:nth-child(odd) .product {
     // flex-direction: column-reverse;
   }

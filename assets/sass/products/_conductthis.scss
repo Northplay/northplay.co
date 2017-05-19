@@ -1,0 +1,113 @@
+@mixin tileDropGenerator($maxY) {
+  0% { top: -300px; opacity: 1; }
+  46% { top: 1.015 * $maxY; opacity: 1; }
+  82% { top: $maxY; opacity: 1; }
+  100% { top: $maxY; opacity: 1; }
+}
+
+@keyframes tileDrop1 { @include tileDropGenerator(550px); }
+@keyframes tileDrop2 { @include tileDropGenerator(364px); }
+@keyframes tileDrop3 { @include tileDropGenerator(398px); }
+@keyframes tileDrop4 { @include tileDropGenerator(276px); }
+@keyframes tileDrop5 { @include tileDropGenerator(151px); }
+@keyframes tileDrop6 { @include tileDropGenerator(157px); }
+@keyframes tileDrop7 { @include tileDropGenerator(85px); }
+
+.tiles {
+  width: 939px;
+  height: 704px;
+  left: -300px;
+  position: absolute;
+  
+  &.inView {
+    .tile1 { animation-name: tileDrop1; animation-delay: 0.2s; }
+    .tile2 { animation-name: tileDrop2; animation-delay: 0.4s; }
+    .tile3 { animation-name: tileDrop3; animation-delay: 0.6s; }
+    .tile4 { animation-name: tileDrop4; animation-delay: 0.8s; }
+    .tile5 { animation-name: tileDrop5; animation-delay: 1s; }
+    .tile6 { animation-name: tileDrop6; animation-delay: 1.2s; }
+    .tile7 { animation-name: tileDrop7; animation-delay: 1.4s; }
+    
+    .tile {
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.tile {
+  position: absolute;
+  display: block;
+  opacity: 0;
+}
+
+.tile1 {
+  height: 155px !important;
+  width: 193px !important;
+  left: 432px;
+  z-index: 21;
+}
+
+.tile2 {
+  height: 270px !important;
+  width: 384px !important;
+  left: 19px;
+  z-index: 22;
+}
+
+.tile3 {
+  height: 241px !important;
+  width: 390px !important;
+  left: 478px;
+  z-index: 13;
+}
+
+.tile4 {
+  height: 237px !important;
+  width: 384px !important;
+  left: 248px;
+  z-index: 14;
+}
+
+.tile5 {
+  height: 239px !important;
+  width: 382px !important;
+  left: 19px;
+  z-index: 15;
+}
+
+.tile6 {
+  height: 233px !important;
+  width: 387px !important;
+  left: 479px;
+  z-index: 16;
+}
+
+.tile7 {
+  height: 131px !important;
+  width: 191px !important;
+  left: 254px;
+  z-index: 17;
+}
+
+
+.product-section {
+  position: relative;
+  flex-direction: row-reverse;
+  
+  &__transition {
+    position: absolute;
+    top: -275px;
+    height: 450px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@include breakpoint(1000px) {
+  .tiles {
+    margin: 0 auto;
+    position: relative;
+    left: auto;
+  }
+}
