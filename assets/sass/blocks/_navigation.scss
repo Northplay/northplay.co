@@ -1,3 +1,9 @@
+// @keyframes translucentBearOut {
+//   from {
+//     transform: rotateY();
+//   }
+// }
+
 .navigation {
   @include flex_container;
   padding: 40px 10px;
@@ -8,15 +14,74 @@
     flex-flow: row nowrap;
     align-items: center;
     height: 78px;
+    
+    transition: all 0.15s ease;
 
-    svg + svg {
-      margin-left: 15px;
+    .navigation__bear {
+      margin-right: 15px;
+      width: 62px;
+      height: 59px;
+      overflow: hidden;
+      position: relative;
+      
+      * {
+        position: absolute;
+        transition: all 0.15s ease;
+      }
+      
+      .translucent {
+        transform: rotateY(0deg);
+      }
+      
+      .white {
+        transform: rotateY(90deg);
+      }
     }
-
-    transition: all 0.15s ease-in-out;
+    
+    .navigation__name {
+      width: 171px;
+      height: 78px;
+      overflow: hidden;
+      position: relative;
+      
+      * {
+        position: absolute;
+        transition: opacity 0.15s ease;
+      }
+      
+      .translucent {
+        opacity: 1;
+      }
+      
+      .white {
+        opacity: 0;
+      }
+    }
 
     &:hover {
       transform: scale(1.1);
+      
+      .navigation__bear {
+        .translucent {
+          transform: rotateY(-90deg);
+          opacity: 0;
+        }
+        
+        .white {
+          transform: rotateY(0deg);
+          transition-delay: 0.15s;
+        }
+      }
+      
+      .navigation__name {
+        .translucent {
+          opacity: 0;
+        }
+        
+        .white {
+          opacity: 1;
+        }
+      }
     }
   }
 
