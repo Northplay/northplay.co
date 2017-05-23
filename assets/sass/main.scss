@@ -18,6 +18,7 @@ body, p, a, span, li, h1, h2, h3, h4 {
 
 @include b(container) {
   width: 100%;
+  overflow-x: hidden;
 }
 
 @import "products/_conductthis";
