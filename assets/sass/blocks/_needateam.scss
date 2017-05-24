@@ -46,3 +46,17 @@
     }
   }
 }
+
+@include breakpoint(320px) {
+  .needateam {
+    &__title {
+      @include rem(font-size, 2.4rem);
+      @include rem(line-height, 2.6rem);
+    }
+    
+    &__about {
+      @include rem(font-size, 1.3rem);
+      @include rem(line-height, 1.8rem);
+    }
+  }
+}

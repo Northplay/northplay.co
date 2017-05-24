@@ -11,6 +11,7 @@
   flex-flow: column nowrap;
   align-items: center;
   color: #fff;
+  padding: 0 10px;
 
   @include e(title) {
     @include rem(font-size, 2.5rem);
@@ -30,7 +31,11 @@
   }
 
   @include e(form) {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: 20px 0 0 0;
+    flex: 1 1 100%;
   }
 
   @include e(email) {
@@ -43,8 +48,8 @@
     @include rem(font-size, 1.3rem);
     @include rem(line-height, 1.3rem);
 
-    padding: 10px 15px 10px 20px;
-    margin: 0;
+    padding: 14px 15px 14px 15px;
+    flex: 1 1 auto;
 
     &::placeholder {
       color: #bdbdbd;
@@ -62,9 +67,10 @@
     border-bottom-right-radius: 20px;
     @include rem(font-size, 1.3rem);
     @include rem(line-height, 1.3rem);
+    flex: 0 0 130px;
 
-    margin-left: -9px;
-    padding: 16px 20px;
+    // margin-left: -20px;
+    // padding: 16px 20px;
 
     &:hover {
       box-shadow: 0px 0px 20px 10px rgba(0, 234, 255, 0.25);
@@ -86,6 +92,31 @@
   .newsletter {
     @include e(email) {
       padding-right: 0;
+    }
+  }
+}
+
+@include breakpoint(320px) {
+  .newsletter {
+    &__title {
+      @include rem(font-size, 2.1rem);
+      @include rem(line-height, 2.5rem);
+    }
+    
+    &__form {
+      flex-wrap: wrap;
+    }
+    
+    &__email {
+      border-radius: 20px;
+      border: 2px solid #00eaff;
+      margin-bottom: 10px;
+      // text-align: center;
+    }
+    
+    &__submit {
+      border-radius: 20px;
+      padding: 16px 20px;
     }
   }
 }
