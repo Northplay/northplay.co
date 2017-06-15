@@ -47,6 +47,7 @@
     border-bottom-left-radius: 20px;
     @include rem(font-size, 1.3rem);
     @include rem(line-height, 1.3rem);
+    min-height: 18px;
 
     padding: 14px 15px 14px 15px;
     flex: 1 1 auto;
@@ -68,6 +69,7 @@
     @include rem(font-size, 1.3rem);
     @include rem(line-height, 1.3rem);
     flex: 0 0 130px;
+    min-height: 50px;
 
     // margin-left: -20px;
     // padding: 16px 20px;

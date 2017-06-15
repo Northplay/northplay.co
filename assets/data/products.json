@@ -174,7 +174,7 @@
     "fill": "#7b7b7b",
     "style": {
       ".product-section--drtv .product-section__transition": {
-        "background-position": "0 0"
+        "background": "linear-gradient(0deg, #dddddd, #7e160e)"
       },
       ".product--drtv": {
         "color": "#2b2b2b"
