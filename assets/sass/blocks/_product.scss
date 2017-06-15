@@ -9,17 +9,17 @@
 }
 
 .product-section:nth-child(even) .product {
-  flex-direction: row;
+  flex-direction: row-reverse;
   
   .product__info.inView {
-    animation-name: fadeNmove;
+    animation-name: fadeNmoveReversed;
   }
 }
 
 @include b(product) {
   @include flex_container;
   display: flex;
-  flex-flow: row-reverse nowrap;
+  flex-flow: row nowrap;
   position: relative;
 
   padding: 300px 0;
@@ -43,7 +43,7 @@
     z-index: 100;
 
     &.inView {
-      animation: fadeNmoveReversed 0.6s;
+      animation: fadeNmove 0.6s;
       animation-fill-mode: forwards;
       animation-delay: 0.5s;
     }
