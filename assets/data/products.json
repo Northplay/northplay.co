@@ -151,5 +151,76 @@
         "color": "#c12604"
       }
     }
+  },
+  {
+    "published": true,
+    "id": "drtv",
+    "name": "DR TV",
+    "tagline": "The Future of Danish Television",
+    "description": "The DR TV app for the Apple TV is propelling national Danish television into the future. Our cultural heritage is in good hands as you swipe through a playful experience where curated meets live & on-demand content all wrapped in a beautifully simple interface. ",
+    "publisher": "DR",
+    "type": "App",
+    "platforms": ["tvos"],
+    "links": {
+      "App Store": "https://itunes.apple.com/se/app/dr-tv/id877604999?mt=8",
+      "dr.dk": "http://dr.dk"
+    },
+    "headerLinks": {
+      "📺 &nbsp;Download": "https://itunes.apple.com/se/app/dr-tv/id877604999?mt=8",
+      "🍿 &nbsp;Read Case": "#reimagined"
+    },
+    "wemade": ["Concept", "Design", "Development"],
+    "tint": "#dddddd",
+    "fill": "#7b7b7b",
+    "style": {
+      ".product-section--drtv .product-section__transition": {
+        "background-position": "0 0"
+      },
+      ".product--drtv": {
+        "color": "#2b2b2b"
+      },
+      ".product--drtv .product__learn-more": {
+        "background-color": "#37373a",
+        "color": "#fff"
+      },
+      ".product--drtv .product__learn-more:hover": {
+        "box-shadow": "0px 0px 20px 10px rgba(55, 55, 58, 0.2)"
+      },
+      ".product--drtv .product__publisher": {
+        "color": "#7b7b7b"
+      }
+    },
+    "pageStyle": {
+      ".header-section": {
+        "background-color": "rgb(244, 244, 244)",
+        "background-image": "url(/images/case-drtv-header.jpg)",
+        "background-position": "bottom center",
+        "background-repeat": "no-repeat",
+        "min-height": "1330px"
+      },
+      ".product-header__name": {
+        "color": "#242424"
+      },
+      ".product-header__tagline": {
+        "color": "#7b7b7b"
+      },
+      ".product-header__link": {
+        "color": "#242424"
+      },
+      ".product-header__link:hover": {
+        "text-decoration": "underline"
+      },
+      ".product-detail__link": {
+        "color": "#242424",
+        "text-decoration": "underline"
+      },
+      ".product-detail__link:hover": {
+        "color": "#000",
+        "text-decoration": "none"
+      },
+      ".product-start__content h2": {
+        "color": "#000"
+      }
+    }
   }
 ]
