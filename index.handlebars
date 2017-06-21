@@ -36,7 +36,7 @@
     <div class="product-section__transition"></div>
     <div class="product product--{{id}}">
       {{#ifCond id "conductthis"}}
-        <div class="product__preview">
+        <div class="product__preview product__preview--conductthis">
           <div class="tiles animateWhenInView">
           <img src="/images/product-conductthis-island-1.png" class="tile tile1" />
           <img src="/images/product-conductthis-island-2.png" class="tile tile2" />
@@ -48,7 +48,7 @@
         </div>
         </div>
       {{else}}
-        <div class="product__preview">
+        <div class="product__preview animateWhenInView">
           <img src="/images/product-preview-{{id}}_2x.png" alt="{{name}} preview" />
         </div>
       {{/ifCond}}
