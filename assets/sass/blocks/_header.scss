@@ -138,9 +138,11 @@
 @include breakpoint(475px) {
   @include b(header) {
     @include e(weare) {
-      br {
-        display: none;
-      }
+      @include rem(font-size, 2.4rem);
+      @include rem(line-height, 3rem);
+      // br {
+      //   display: none;
+      // }
     }
   }
 }
