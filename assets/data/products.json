@@ -9,7 +9,7 @@
     "type": "Game",
     "platforms": ["ios", "android"],
     "links": {
-      "App Store": "https://itunes.apple.com/us/app/conduct-this!/id1151455384?ls=1&mt=8",
+      "App Store": "https://itunes.apple.com/us/app/conduct-this/id1151455384?mt=8&at=1010lwVg&ct=nortplay-site",
       "Google Play": "https://play.google.com/store/apps/details?id=co.northplay.ConductTHIS",
       "Website": "https://conductthis.com",
       "Twitter": "https://twitter.com/conductthis",
@@ -92,11 +92,11 @@
     "type": "App",
     "platforms": ["ios", "tvos"],
     "links": {
-      "App Store": "https://itunes.apple.com/dk/app/minbio/id552801149?l=da&mt=8",
+      "App Store": "https://itunes.apple.com/dk/app/minbio/id552801149?mt=8&at=1010lwVg&ct=nortplay-site",
       "MinBio.dk": "http://www.minbio.dk"
     },
     "headerLinks": {
-      "📲 &nbsp;Download": "https://itunes.apple.com/dk/app/minbio/id552801149?l=da&mt=8",
+      "📲 &nbsp;Download": "https://itunes.apple.com/dk/app/minbio/id552801149?mt=8&at=1010lwVg&ct=nortplay-site",
       "🍿 &nbsp;Read Case": "#child_universe"
     },
     "wemade": ["Development", "Design", "tvOS & iOS"],
@@ -163,11 +163,11 @@
     "type": "App",
     "platforms": ["tvos"],
     "links": {
-      "App Store": "https://itunes.apple.com/se/app/dr-tv/id877604999?mt=8",
+      "App Store": "https://itunes.apple.com/dk/app/dr-tv/id877604999?mt=8&at=1010lwVg&ct=nortplay-site",
       "dr.dk": "http://dr.dk"
     },
     "headerLinks": {
-      "📺 &nbsp;Download": "https://itunes.apple.com/se/app/dr-tv/id877604999?mt=8",
+      "📺 &nbsp;Download": "https://itunes.apple.com/dk/app/dr-tv/id877604999?mt=8&at=1010lwVg&ct=nortplay-site",
       "🍿 &nbsp;Read Case": "#reimagined"
     },
     "wemade": ["Concept", "Design", "Development"],
