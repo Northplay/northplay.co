@@ -144,7 +144,7 @@ function image_helper(path, cls = null, alt = "", has_retina = true) {
   const retina = retina_path(path);
   var str = `<img src="/images/${path}"`;
   if (has_retina) {
-    str += ` data-at2x="/images/${retina}"`;
+    str += ` data-rjs="/images/${retina}"`;
   }
   if (typeof cls === 'string') {
     str += ` class="${cls}"`;

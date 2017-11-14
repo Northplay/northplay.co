@@ -1,6 +1,7 @@
 var $ = require('jquery');
 var Ladda = require('ladda');
-var Retina = require('retina.js').Retina;
+var retinajs  = require('retinajs');
+
 var videoElement = document.getElementById('big_video');
 
 const trackEvent = function(a, b, c) {
@@ -62,7 +63,11 @@ const handle_newsletter_submit = function(e) {
 function isElementInView(el) {
   var $el = $(el);
 
-  var scrollEl = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+  var scrollEl = 'body';
+  if (navigator.userAgent.toLowerCase().indexOf('chrome') != -1) {
+    scrollEl = 'html';
+  }
+  
   var viewportTop = $(scrollEl).scrollTop();
   var viewportBottom = viewportTop + $(window).height();
 
@@ -73,13 +78,13 @@ function isElementInView(el) {
 }
 
 function whenInView(el, action) {
-  $this = $(el);
+  $el = $(el);
 
-  if (isElementInView($this) && !$this.hasClass('inView')) {
-    $this.addClass('inView');
-    action($this);
-  } else if(!isElementInView($this) && $this.hasClass('inView')) {
-    $this.removeClass('inView');
+  if (isElementInView($el) && !$el.hasClass('inView')) {
+    $el.addClass('inView');
+    action($el);
+  } else if(!isElementInView($el) && $el.hasClass('inView')) {
+    $el.removeClass('inView');
   }
 }
 
@@ -109,5 +114,5 @@ $(document).ready(function() {
   $(window).scroll(startAnimations);
   startAnimations();
 
-  Retina.init(window);
+  retinajs();
 });

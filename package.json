@@ -32,7 +32,7 @@
     "jquery": "^2.2.2",
     "ladda": "^1.0.0",
     "normalize.css": "^4.0.0",
-    "retina.js": "^1.1.0",
+    "retinajs": "2.1.2",
     "scrollmagic": "^2.0.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
