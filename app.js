@@ -1,11 +1,13 @@
 const express = require('express');
 const compression = require('compression');
+const morgan = require('morgan');
 
 const build = `${__dirname}/build`;
 const port = process.env.PORT ? process.env.PORT : 3000;
 
 const app = express();
 
+app.use(morgan('combined'));
 app.use(compression());
 app.use(express.static(build));
 
