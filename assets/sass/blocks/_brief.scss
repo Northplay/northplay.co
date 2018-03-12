@@ -1,0 +1,174 @@
+.brief-container {
+  background-color: #134e9f;
+  padding: 60px;
+}
+
+.brief-wrapper {
+  margin: 0 auto;
+  max-width: 1140px;
+  background-color: #fff;
+}
+
+.brief-footer {
+  width: 100%;
+}
+
+@include breakpoint(1230px) {
+  div.brief {
+    padding: 0 20px;
+  }
+}
+
+@include breakpoint(865px) {
+  div.brief {
+    padding: 0 20px;
+    
+    .brief__description {
+      br {
+        display: none;
+      }
+      
+      strong {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@include breakpoint(680px) {
+  div.brief-container {
+    padding: 0;
+  }
+}
+
+@include breakpoint(420px) {
+  div.brief {
+    .brief__title {
+      @include rem(font-size, 2.2rem);
+      @include rem(line-height, 2.5rem);
+      br { display: none; }
+    }
+    
+    .brief__description {
+      @include rem(font-size, 1.6rem);
+      @include rem(line-height, 2rem);
+      strong { padding: 0; }
+    }
+    
+    li {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      
+      .emoji {
+        font-size: 1.5em;
+        line-height: 1em;
+        width: auto;
+        flex: 0 0 100%;
+        margin: 15px 0 5px 0;
+      }
+    }
+  }
+}
+
+.brief {
+  padding: 0 200px;
+  background-color: #fff;
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 2px 0;
+    @include rem(font-size, 1.4rem);
+    @include rem(line-height, 1.5rem);
+    font-weight: $font_weight_heavy;
+    
+    .emoji {
+      display: flex;
+      width: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  h2 {
+    @include rem(font-size, 1.7rem);
+    @include rem(line-height, 2.1rem);
+    margin: 20px 0 0 0;
+  }
+  
+  p {
+    @include rem(font-size, 1.4rem);
+    @include rem(line-height, 1.8rem);
+    margin: 30px 0;
+  }
+  
+  h2 + p {
+    margin-top: 0;
+  }
+  
+  .brief__description {
+    @include rem(font-size, 2.1rem);
+    @include rem(line-height, 2.4rem);
+    font-weight: $font_weight_book;
+    // max-width: 700px;
+    // margin: 0 auto;
+    margin-bottom: 50px;
+    
+    strong {
+      background-color: #ffef3f;
+      padding: 0 10px;
+      margin-left: -10px;
+    }
+  }
+}
+
+.brief__title {
+  @include rem(font-size, 3.5rem);
+  @include rem(line-height, 3.2rem);
+  font-weight: $font_weight_heavy;
+  text-transform: uppercase;
+}
+
+
+.hire-us {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.hire-us__header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.hire-us__contact {
+  @include rem(font-size, 1.5rem);
+  // @include rem(line-height, 1.8rem);
+  font-weight: $font_weight_heavy;
+  background-color: rgba(255, 239, 63, 1);
+  color: #000;
+  cursor: pointer;
+  border-radius: 25px;
+  text-decoration: none;
+  user-select: none;
+
+  display: inline-block;
+  padding: 18px 40px;
+  margin-top: 50px;
+
+  transition: all 0.12s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 0px 20px 10px rgba(255, 239, 63, 0.4);
+    transform: translateY(-3px) scale(1.05);
+  }
+}
