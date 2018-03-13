@@ -252,22 +252,18 @@ gulp.task('subpages', () => {
       const id = file.path.replace('.handlebars', '').split('/').pop();
       const product = products.filter((p) => p.id == id).pop();
       
+      let data = {
+        site: site,
+        config: config,
+      };
+      
       if (product !== undefined) {
-        let data = {
-          site: site,
-          config: config,
-          title: product.name,
-          data: {
-            product: product
-          }
-        };
-
+        data.title = product.name;
+        data.data = { product: product };
         data.site.description = product.description;
-
-        return data;
-      } else {
-        return {};
       }
+      
+      return data;
     }))
     .pipe(handlebars({}, options))
     .pipe(rename((path) => {
