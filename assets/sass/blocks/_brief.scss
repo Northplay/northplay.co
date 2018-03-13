@@ -42,19 +42,38 @@
   }
 }
 
+@include breakpoint(320px) {
+  div.brief {
+    .brief__title {
+      br { display: none; }
+    }
+  }
+}
+
 @include breakpoint(420px) {
   div.brief {
     .brief__title {
-      @include rem(font-size, 2.2rem);
-      @include rem(line-height, 2.5rem);
-      br { display: none; }
+      @include rem(font-size, 1.6rem);
+      @include rem(line-height, 2.1rem);
+      // br { display: none; }
     }
     
     .brief__description {
-      @include rem(font-size, 1.6rem);
-      @include rem(line-height, 2rem);
+      @include rem(font-size, 1.4rem);
+      @include rem(line-height, 1.9rem);
       strong { padding: 0; }
     }
+    
+    h2 {
+      @include rem(font-size, 1.4rem);
+      @include rem(line-height, 1.9rem);
+    }
+    
+    p {
+      @include rem(font-size, 1.2rem);
+      @include rem(line-height, 1.8rem);
+    }
+      
     
     li {
       flex-wrap: wrap;
