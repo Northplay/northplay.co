@@ -43,7 +43,8 @@
     "start": "gulp production && node app.js",
     "build": "gulp build",
     "build-production": "gulp production",
-    "dev": "gulp"
+    "dev": "gulp",
+    "deploy": "git push origin master && git push web master"
   },
   "repository": {
     "type": "git",
