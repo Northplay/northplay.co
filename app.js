@@ -11,7 +11,7 @@ app.use(morgan('combined'));
 app.use(compression());
 app.use(express.static(build));
 
-app.get('/norse', (req, res) => res.redirect(301, 'https://patreon.com/northplay'));
+app.get('/norse', (req, res) => res.redirect(301, 'https://youtu.be/lzSgZw9k7Ls'));
 
 app.listen(port, function (error) {
   if (error) {
